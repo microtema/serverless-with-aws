@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Converter scenario Converter scenario with status code: 200 Should handle multiple lines 1`] = `
+Object {
+  "body": "{
+  \\"foo\\": \\"bar\\",
+  \\"version\\": \\"1.0.0\\"
+}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should return 200 statusCode and translated properties as JSON 1`] = `
+Object {
+  "body": "{
+  \\"foo\\": \\"bar\\"
+}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should return 200 statusCode on empty body 1`] = `
+Object {
+  "body": "{}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should return 200 statusCode on empty propertyName 1`] = `
+Object {
+  "body": "{}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should return 200 statusCode with body as string 1`] = `
+Object {
+  "body": "{
+  \\"foo\\": \\"bar\\"
+}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should trim property name 1`] = `
+Object {
+  "body": "{
+  \\"foo\\": \\"bar\\"
+}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 200 Should trim property value 1`] = `
+Object {
+  "body": "{
+  \\"foo\\": \\"bar\\"
+}",
+  "headers": Object {},
+  "statusCode": 200,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 400 Should return 400 statusCode on empty event 1`] = `
+Object {
+  "message": "Body may not be null or undefined",
+  "statusCode": 400,
+}
+`;
+
+exports[`Converter scenario Converter scenario with status code: 400 Should return 400 statusCode on null event 1`] = `
+Object {
+  "message": "Event may not be null or undefined",
+  "statusCode": 400,
+}
+`;
