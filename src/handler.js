@@ -1,4 +1,5 @@
 import assert from 'assert';
+import propertiesToJSON from 'properties-to-json';
 
 'use strict';
 
@@ -10,7 +11,7 @@ module.exports.convertProperties2Json = async (event) => {
     assert(event.body, 'Body may not be null or undefined');
 
     const payload = getPayload(event.body);
-    const properties = convertProperties2Json(payload);
+    const properties = propertiesToJSON(payload);
 
     return {
       statusCode: 200,
@@ -25,36 +26,6 @@ module.exports.convertProperties2Json = async (event) => {
     };
   }
 
-};
-
-const convertProperties2Json = (propertiesAsString) => {
-
-  const properties = {};
-
-  if (!propertiesAsString) {
-    return properties;
-  }
-
-  const lines = propertiesAsString.split("\n");
-
-  lines.forEach(it => {
-
-    const tokens = it.split("=");
-    const propertyName = trim(tokens[0]);
-
-    if (!propertyName) {
-      return;
-    }
-
-    properties[propertyName] = trim(tokens[1]);
-  });
-
-  return properties;
-};
-
-const trim = (str) => {
-
-  return (str || '').trim();
 };
 
 const getPayload = (body) => {
