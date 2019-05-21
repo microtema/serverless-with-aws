@@ -30,29 +30,6 @@
     "typescript": "^3.4.5",
     "webpack": "^4.29.0"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/*.ts",
-      "!**/node_modules/**",
-      "!**/test/**"
-    ],
-    "transform": {
-      "\\.(ts|tsx)$": "ts-jest"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
-  },
   "author": "Mario Tema <mario.tema@gmx.de>",
   "license": "MIT"
 }
