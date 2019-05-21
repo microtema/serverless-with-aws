@@ -31,7 +31,7 @@ describe('Convert Properties to Json API', () => {
 
         it('Should return 400 statusCode on empty body', async () => {
 
-            event = {body: ''};
+            event = {body: {data: ''}};
 
             const result = await sut(event, context, callback);
 
@@ -43,7 +43,7 @@ describe('Convert Properties to Json API', () => {
 
         it('Should return 200 statusCode and translated properties as JSON', async () => {
 
-            event = {body: 'foo=bar'};
+            event = {body: {data: 'foo=bar'}};
 
             const result = await sut(event, context, callback);
 

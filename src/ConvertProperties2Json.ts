@@ -3,13 +3,15 @@ import {APIGatewayProxyHandler} from 'aws-lambda';
 import propertiesToJSON from 'properties-to-json';
 import 'source-map-support/register';
 
+import * as Utils from '../src/Utils';
+
 const convertProperties2Json: APIGatewayProxyHandler = async (event: any) => {
     try {
 
         assert(event, 'Event may not be null or undefined');
         assert(event.body, 'Body may not be null or undefined');
 
-        const payload = event.body;
+        const payload = Utils.getPayload(event.body).data;
         const result = propertiesToJSON(payload);
 
         return {

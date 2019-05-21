@@ -2,13 +2,15 @@ service:
   name: converter-ts
 plugins:
   - serverless-webpack
+  - serverless-offline
+  - serverless-jest-plugin
 package:
   exclude:
     - node_modules/**
     - test/**
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: eu-central-1
 functions:
   convertProperties2Json:

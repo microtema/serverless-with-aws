@@ -11,8 +11,8 @@ Object {
 
 exports[`Convert Properties to Json API Converter scenario with status code: 400 Should return 400 statusCode on empty body 1`] = `
 Object {
-  "body": "Body may not be null or undefined",
-  "statusCode": 400,
+  "body": "{}",
+  "statusCode": 200,
 }
 `;
 
