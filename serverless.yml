@@ -1,5 +1,5 @@
 service:
-  name: aws-nodejs-typescript
+  name: converter-ts
 plugins:
   - serverless-webpack
 package:
@@ -12,9 +12,16 @@ provider:
   region: eu-central-1
 functions:
   convertProperties2Json:
-    handler: src/handler.convertProperties2Json
+    handler: src/ConvertProperties2Json.default
     description: Convert Properties to Json
     events:
       - http:
           method: post
           path: converter/properties/json
+  convertJson2Yaml:
+    handler: src/ConvertJson2Yaml.default
+    description: Convert Json to Yaml
+    events:
+      - http:
+          method: post
+          path: converter/json/yaml

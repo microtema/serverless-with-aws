@@ -2,20 +2,21 @@
   "name": "aws-converter-api",
   "version": "1.0.0",
   "description": "Serverless converter-api",
-  "main": "src/handler.js",
   "scripts": {
     "clean": "rm -rf .serverless || true && rm -rf coverage || true",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "pretest": "npm run lint",
     "test": "jest",
     "prepackage": "npm test",
     "package": "sls package",
+    "deploy.skip": "sls deploy",
     "predeploy": "npm test",
     "deploy": "sls deploy",
     "undeploy": "sls remove"
   },
   "dependencies": {
     "assert": "^2.0.0",
+    "json2yaml": "^1.1.0",
     "properties-to-json": "^0.1.4",
     "source-map-support": "^0.5.10"
   },

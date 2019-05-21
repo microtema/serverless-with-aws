@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Convert Json to Yaml API Converter scenario with status code: 200 Should return 200 statusCode and convert JSON as string to Yaml 1`] = `
+Object {
+  "body": "\\"---\\\\n  foo: \\\\\\"bar\\\\\\"\\\\n\\"",
+  "statusCode": 200,
+}
+`;
+
+exports[`Convert Json to Yaml API Converter scenario with status code: 200 Should return 200 statusCode and convert JSON to Yaml 1`] = `
+Object {
+  "body": "\\"---\\\\n  foo: \\\\\\"bar\\\\\\"\\\\n\\"",
+  "statusCode": 200,
+}
+`;
+
+exports[`Convert Json to Yaml API Converter scenario with status code: 200 Should return 200 statusCode on empty body 1`] = `
+Object {
+  "body": "\\"---\\\\n  data: \\\\\\"\\\\\\"\\\\n\\"",
+  "statusCode": 200,
+}
+`;
+
+exports[`Convert Json to Yaml API Converter scenario with status code: 400 Should return 400 statusCode on empty event 1`] = `
+Object {
+  "body": "Body may not be null or undefined",
+  "statusCode": 400,
+}
+`;
+
+exports[`Convert Json to Yaml API Converter scenario with status code: 400 Should return 400 statusCode on null event 1`] = `
+Object {
+  "body": "Event may not be null or undefined",
+  "statusCode": 400,
+}
+`;

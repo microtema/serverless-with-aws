@@ -1,10 +1,10 @@
 import {Callback, Context} from 'aws-lambda';
 
-import * as api from '../src/handler';
+import handler from '../src/ConvertJson2Yaml';
 
-describe('Convert Properties to Json API', () => {
+describe('Convert Json to Yaml API', () => {
 
-    const sut = api.convertProperties2Json;
+    const sut = handler;
     const context = {} as Context;
     const callback = {} as Callback<any>;
     let event = null;
@@ -42,18 +42,18 @@ describe('Convert Properties to Json API', () => {
             expect(result).toMatchSnapshot();
         });
 
-        it('Should return 200 statusCode and translated properties as JSON', async () => {
+        it('Should return 200 statusCode and convert JSON to Yaml', async () => {
 
-            event = {body: {data: 'foo=bar'}};
+            event = {body: {foo: 'bar'}};
 
             const result = await sut(event, context, callback);
 
             expect(result).toMatchSnapshot();
         });
 
-        it('Should return 200 statusCode with body as string', async () => {
+        it('Should return 200 statusCode and convert JSON as string to Yaml', async () => {
 
-            event = {body: JSON.stringify({data: 'foo=bar'})};
+            event = {body: JSON.stringify({foo: 'bar'})};
 
             const result = await sut(event, context, callback);
 

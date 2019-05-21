@@ -9,19 +9,10 @@ Object {
 }
 `;
 
-exports[`Convert Properties to Json API Converter scenario with status code: 200 Should return 200 statusCode on empty body 1`] = `
+exports[`Convert Properties to Json API Converter scenario with status code: 400 Should return 400 statusCode on empty body 1`] = `
 Object {
-  "body": "{}",
-  "statusCode": 200,
-}
-`;
-
-exports[`Convert Properties to Json API Converter scenario with status code: 200 Should return 200 statusCode with body as string 1`] = `
-Object {
-  "body": "{
-  \\"foo\\": \\"bar\\"
-}",
-  "statusCode": 200,
+  "body": "Body may not be null or undefined",
+  "statusCode": 400,
 }
 `;
 
