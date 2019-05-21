@@ -9,10 +9,6 @@ describe('Convert Properties to Json API', () => {
     const callback = {} as Callback<any>;
     let event = null;
 
-    it('Should be defined', () => {
-        expect(sut).toBeDefined();
-    });
-
     describe('Converter scenario with status code: 400', () => {
 
         it('Should return 400 statusCode on null event', async () => {

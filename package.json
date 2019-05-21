@@ -1,14 +1,18 @@
 {
-  "name": "aws-nodejs-typescript",
+  "name": "aws-converter-api",
   "version": "1.0.0",
-  "description": "Serverless webpack example using Typescript",
+  "description": "Serverless converter-api",
   "main": "src/handler.js",
   "scripts": {
+    "clean": "rm -rf .serverless || true && rm -rf coverage || true",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "pretest": "npm run lint",
     "test": "jest",
+    "prepackage": "npm test",
+    "package": "sls package",
     "predeploy": "npm test",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "undeploy": "sls remove"
   },
   "dependencies": {
     "assert": "^2.0.0",
@@ -39,8 +43,16 @@
     ],
     "transform": {
       "\\.(ts|tsx)$": "ts-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
     }
   },
-  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "author": "Mario Tema <mario.tema@gmx.de>",
   "license": "MIT"
 }
