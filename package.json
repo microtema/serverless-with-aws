@@ -1,61 +1,46 @@
 {
-  "name": "serverless",
+  "name": "aws-nodejs-typescript",
   "version": "1.0.0",
-  "description": "",
-  "main": "handler.js",
+  "description": "Serverless webpack example using Typescript",
+  "main": "src/handler.js",
   "scripts": {
-    "codecov": "codecov",
-    "coverage": "npm run test && npm run codecov",
-    "deploy": "serverless deploy -v",
-    "lint": "eslint .",
-    "start": "serverless offline start",
-    "test": "jest"
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "predeploy": "npm test",
+    "deploy": "sls deploy"
   },
   "dependencies": {
     "assert": "^2.0.0",
-    "aws-sdk": "2.223.1",
-    "properties-to-json": "^0.1.4"
+    "properties-to-json": "^0.1.4",
+    "source-map-support": "^0.5.10"
   },
   "devDependencies": {
-    "aws-sdk-mock": "1.7.0",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.4",
-    "babel-preset-env": "1.6.1",
-    "codecov": "3.0.0",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-config-prettier": "2.9.0",
-    "eslint-plugin-import": "2.10.0",
-    "eslint-plugin-jest": "21.15.0",
-    "eslint-plugin-prettier": "2.6.0",
-    "jest": "22.4.3",
-    "prettier": "1.11.1",
-    "serverless": "1.26.1",
-    "serverless-offline": "3.20.1",
-    "serverless-webpack": "5.1.1",
-    "webpack": "4.5.0",
-    "path": "^0.12.7"
+    "@types/aws-lambda": "^8.10.17",
+    "@types/node": "^10.12.18",
+    "@types/jest": "^24.0.13",
+    "jest": "^24.8.0",
+    "serverless-webpack": "^5.2.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.5",
+    "webpack": "^4.29.0"
   },
   "jest": {
-    "coverageDirectory": "./coverage/",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "collectCoverage": true,
-    "testURL": "http://localhost"
+    "collectCoverageFrom": [
+      "**/*.ts",
+      "!**/node_modules/**",
+      "!**/test/**"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microtema/serverless.git"
-  },
-  "keywords": [
-    "Serverless",
-    "AWS",
-    "NodeJs",
-    "SOA",
-    "Microservice"
-  ],
-  "author": "Mario Tema",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/microtema/serverless/issues"
-  },
-  "homepage": "https://github.com/microtema/serverless#readme"
+  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "license": "MIT"
 }
