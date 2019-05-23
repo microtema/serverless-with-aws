@@ -9,14 +9,14 @@ describe('Utils.getPayload API', () => {
 
         event = null;
 
-        expect(sut(event)).toEqual(event);
+        expect(sut(event)).toEqual(null);
     });
 
     it('Should return empty Object', () => {
 
         event = {};
 
-        expect(sut(event)).toEqual(event);
+        expect(sut(event)).toEqual({});
     });
 
     it('Should return parsed string to Object', () => {
